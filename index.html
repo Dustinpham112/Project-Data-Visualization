@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hospitalised road crash injuries in Australia, 2011–2021</title>
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+</head>
+<body>
+<nav aria-label="Sections">
+  <a href="#overview">Overview</a><a href="#q1">Trend</a><a href="#q2">Road users</a>
+  <a href="#q3">Who</a><a href="#q4">Where</a><a href="#q5">First Nations</a><a href="#about">About</a>
+</nav>
+<main>
+  <header id="overview">
+    <h1>Hospitalised road crash injuries, in numbers</h1>
+    <p>Five questions, one scroll: how many people are admitted to hospital after road crashes, who they are, and where they live. Australia, 2011–2021.</p>
+  </header>
+  <div id="error" hidden role="alert">The data files could not be loaded. Open the site through a web server and check the data/ folder.</div>
+
+  <section id="q1"><h2>How have yearly hospitalisations changed since 2011?</h2>
+    <div id="chart-q1"></div>
+    <p class="note">Hover or focus the dashed markers for the 2012 and 2017 series breaks. Counts, not rates. Source: BITRE/AIHW.</p></section>
+
+  <section id="q2"><h2>Who is injured most often?</h2>
+    <div id="chart-q2"></div>
+    <p class="note">Cumulative 2011–2021; smaller groups are combined as “Other”. Click a bar (or press Enter) to update the next chart; click again or press Esc to reset.</p></section>
+
+  <section id="q3"><h2>Who is affected, by age and sex?</h2>
+    <p id="q3-sub" class="sub">All road users</p>
+    <div id="chart-q3"></div>
+    <p class="note">Counts, not population rates. Records with a missing age group are excluded.</p></section>
+
+  <section id="q4"><h2>Cases and hospital stay by remoteness</h2>
+    <div class="pair"><div id="chart-q4a"></div><div id="chart-q4b"></div></div>
+    <p class="note">Counts, not rates: regions are not compared by risk. Remoteness is the patient’s usual residence. Records with missing remoteness are excluded.</p></section>
+
+  <section id="q5"><h2>First Nations share of hospitalisations, by half-year</h2>
+    <div id="chart-q5"></div>
+    <p class="note">The light bar (Jul–Dec 2014) has suppressed “n.p.” values, so the First Nations count is slightly understated. Shares are not risk rates.</p></section>
+
+  <section id="about"><h2>About the data</h2>
+    <p>Source: Road Safety Data Hub (BITRE) with AIHW National Hospital Morbidity Database data, 2011–2021 (National, State and territory, First Nations files). Educational use with attribution.</p>
+    <p>Limits: only hospital admissions are counted; Victoria (2012) and NSW (2017) have series breaks; small numbers are withheld as “n.p.”; figures are counts, not rates.</p>
+    <p>Accessibility: colour-blind-safe palette, keyboard access to bars and markers, tooltips on focus.</p></section>
+</main>
+<div id="tooltip" role="tooltip"></div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
