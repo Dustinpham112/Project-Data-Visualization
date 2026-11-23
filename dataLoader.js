@@ -16,7 +16,7 @@ export async function loadAll() {
     ]);
     return { year, roadUser, ageSex, remote, fn };
   } catch (err) {
-    document.getElementById('error').hidden = false;   // show a message instead of a blank page
+    document.getElementById('error').hidden = false;   
     throw err;
   }
 }

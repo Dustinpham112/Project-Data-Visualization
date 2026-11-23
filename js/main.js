@@ -10,6 +10,7 @@ import { groupedBar } from './charts/groupedBar.js';
 const D = await loadAll();
 
 // Q1: yearly trend
+D.year.sort((a, b) => a[COLS.year] - b[COLS.year]);
 lineChart('#chart-q1', D.year);
 
 // Q2: total per road user, top 5 plus "Other"
@@ -36,10 +37,18 @@ drawQ3(null);
 const rem = REMOTE_ORDER.map(r => D.remote.find(d => d[COLS.rem] === r)).filter(Boolean);
 barChart('#chart-q4a', rem, { label: COLS.rem, value: COLS.hosp, title: 'Hospitalisations by remoteness', valueTitle: 'Hospitalisations' });
 barChart('#chart-q4b', rem, { label: COLS.rem, value: COLS.bed, title: 'Average bed days per hospitalisation by remoteness',
-  valueTitle: 'Average bed days', format: d3.format('.2f'), axisFormat: d3.format('.0f') });
+  valueTitle: 'Average bed days', color: () => COLORS.q4b, format: d3.format('.2f'), axisFormat: d3.format('.0f') });
 
 // Q5: First Nations share by half-year; Jul-Dec 2014 is drawn lighter (suppressed values)
 const fn = D.fn.map(d => ({ ...d, label: `${d[COLS.year]} ${String(d[COLS.half]).slice(0, 3)}` }));
 barChart('#chart-q5', fn, { label: 'label', value: COLS.share, title: 'First Nations share of hospitalisations by half-year',
   valueTitle: 'Share (%)', width: 800, height: 320, showValues: false, format: v => v.toFixed(1) + '%',
-  tickFormat: d => (d.endsWith('Jan') ? d.slice(0, 4) : ''), color: d => (d.label === '2014 Jul' ? COLORS.suppressed : COLORS.base) });
+  tickFormat: d => (d.endsWith('Jan') ? d.slice(0, 4) : ''), color: d => (d.label === '2014 Jul' ? COLORS.suppressed : COLORS.q5) });
+
+// Hero KPI cards, computed from the loaded data
+const latest = D.year[D.year.length - 1], peak = d3.greatest(D.year, d => d[COLS.hosp]), n = d3.format(',');
+const kpis = [[n(latest[COLS.hosp]), `hospitalised in ${latest[COLS.year]}`], [n(peak[COLS.hosp]), `peak year (${peak[COLS.year]})`],
+  [totals[0][0], `largest road-user group (${n(totals[0][1])} cases)`]];
+d3.select('#kpis').selectAll('div').data(kpis).join(enter => {
+  const e = enter.append('div').attr('class', 'kpi');
+  e.append('strong').text(d => d[0]); e.append('span').text(d => d[1]); return e; });
