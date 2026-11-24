@@ -3,7 +3,7 @@
 export const COLORS = { base:'#0072B2', highlight:'#E69F00', female:'#CC79A7', male:'#0072B2', q4b:'#009E73', q5:'#009E73', suppressed:'#9bd8c4' }; // Okabe-Ito
 export const MARGIN = { top:30, right:20, bottom:40, left:70 };
 // Column names as exported from KNIME - change them here only if your CSV headers differ.
-export const COLS = { year:'Year', ro:'Road user', age:'Age group', sex:'Sex', hosp:'Hospitalisations',
+export const COLS = { year:'Year', ro:'Road user', age:'Age group', sex:'Sex', hosp:'Sum(Hospitalisations)',
                       rem:'Remoteness', bed:'Avg_bed_days', half:'Half', share:'FN_share_pct' };
 export const AGE_ORDER = ['0-7','8-16','17-25','26-39','40-64','65-74','75+'];
 export const REMOTE_ORDER = ['Major Cities','Regional','Remote'];
