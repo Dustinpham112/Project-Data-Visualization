@@ -1,5 +1,5 @@
 // constants.js - shared settings: palette, sizes, column names, notes.
-// AI use: [team: summarise the prompts used, or write "No AI was used"]
+// AI use: our team use AI for to create wireframe and idea for color
 export const COLORS = { base:'#0072B2', highlight:'#E69F00', female:'#CC79A7', male:'#0072B2', q4b:'#009E73', q5:'#009E73', suppressed:'#9bd8c4' }; // Okabe-Ito
 export const MARGIN = { top:30, right:20, bottom:40, left:70 };
 // Column names as exported from KNIME - change them here only if your CSV headers differ.

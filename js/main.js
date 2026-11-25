@@ -1,5 +1,5 @@
 // main.js - start-up: loads data, prepares each question's data and draws the charts.
-// AI use: [team: summarise the prompts used, or write "No AI was used"]
+// AI use: Our team use AI for to take idea and some coding from AI which to fix our code
 import { COLORS, COLS, AGE_ORDER, REMOTE_ORDER } from './constants.js';
 import { loadAll } from './dataLoader.js';
 import { selectRoadUser, onChange } from './interactions.js';
