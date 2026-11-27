@@ -1,4 +1,4 @@
-/* styles.css - light, colourful theme (Okabe-Ito accents). AI use: [team: summarise prompts or write "none"] */
+
 :root{color-scheme:light;--text:#1f2933;--muted:#52606d;--card:#fff;--accent:#0072B2}
 *{box-sizing:border-box}
 body{margin:0;font:16px/1.6 system-ui,sans-serif;color:var(--text);background:linear-gradient(180deg,#dcecf9 0,#f4f9fe 420px,#eaf3fb 100%)}
