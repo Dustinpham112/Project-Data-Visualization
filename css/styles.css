@@ -24,3 +24,27 @@ svg{width:100%;height:auto;color:var(--text)}
 rect[role=button]{cursor:pointer}
 #tooltip{position:absolute;opacity:0;pointer-events:none;padding:.5rem .7rem;border-radius:8px;background:#fff;color:var(--text);border:1px solid #9fb3c8;box-shadow:0 4px 12px rgba(0,0,0,.18);font-size:.85rem;max-width:260px}
 #error{padding:1rem;border:2px solid #D55E00;border-radius:8px;background:#fff4ec}
+
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:.5rem;top:-3rem;z-index:10;padding:.5rem 1rem;background:#fff;color:#0b4f7a;border-radius:8px;font-weight:600}
+.skip:focus{top:.5rem}
+.sw{display:inline-block;width:1em;height:1em;margin:0 .3em 0 .8em;vertical-align:-.15em;border-radius:3px}
+.sw-main{background:#009E73}
+.sw-light{background:#9bd8c4;border:1px solid #009E73}
+.hint,.explain,.status,.legend{font-size:.95rem;color:var(--muted)}
+.explain{padding:.6rem .9rem;border-left:4px solid var(--accent);background:#f1f7fc;border-radius:6px}
+section,header#overview{scroll-margin-top:4rem}
+#q2-clear{margin-left:.5rem;padding:.25rem .8rem;border:1px solid var(--accent);border-radius:999px;background:#fff;color:#0b4f7a;font:inherit;cursor:pointer}
+#q2-clear:hover{background:#dcecf9}
+[hidden]{display:none!important}
+#q6{border-color:#D55E00}#q7{border-color:#56B4E9}#direction{border-color:#0b3d6e}
+h3{margin:1rem 0 .4rem;font-size:1.1rem;color:#0b3d6e}
+.table-wrap{overflow-x:auto;margin:1rem 0}
+table.direction{width:100%;border-collapse:collapse;font-size:.92rem;min-width:640px}
+table.direction th,table.direction td{padding:.6rem .7rem;text-align:left;vertical-align:top;border-bottom:1px solid #c9dcef}
+table.direction thead th{background:#0b3d6e;color:#fff;font-weight:600}
+table.direction tbody th{color:#0b3d6e;background:#f4f9fe;width:16%}
+table.direction tbody tr:nth-child(even) td{background:#f9fcff}
+table.direction strong{font-size:1.05rem}
+.panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:1rem;margin:1rem 0}
+.panels h3{margin-top:0;font-size:1rem}
