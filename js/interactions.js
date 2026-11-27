@@ -11,7 +11,7 @@ export function hideTip() { tip.style('opacity', 0); }
 
 let selected = null; const listeners = [];
 export function selectRoadUser(name) {           // clicking the selected bar again clears the selection
-  selected = (selected === name) ? null : name;
+  selected = (name === null || selected === name) ? null : name;
   listeners.forEach(f => f(selected));
 }
 export function onChange(f) { listeners.push(f); }

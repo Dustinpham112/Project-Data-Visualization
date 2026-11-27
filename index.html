@@ -12,7 +12,7 @@
 <div id="sr-status" class="sr-only" aria-live="polite"></div>
 <nav aria-label="Sections">
   <a href="#overview">Overview</a><a href="#q1">Trend</a><a href="#q2">Road users</a>
-  <a href="#q3">Who</a><a href="#q4">Where</a><a href="#q5">First Nations</a><a href="#about">About</a>
+  <a href="#q3">Who</a><a href="#q4">Where</a><a href="#q5">First Nations</a><a href="#q6">Compare</a><a href="#direction">Direction</a><a href="#about">About</a>
 </nav>
 <main>
   <header id="overview">
@@ -23,7 +23,7 @@
   <div id="error" hidden role="alert">The data files could not be loaded. Open the site through a web server and check the data/ folder.</div>
 
   <section id="q1"><h2>How have yearly hospitalisations changed since 2011?</h2>
-    <p class="hint">Tip: hover over (or tap) a point to see its value, and over the dashed markers to read what they mean.</p>
+    <p class="hint">Tip: hover over (or tap) a point to see its value.</p>
     <div id="chart-q1"></div>
     <p class="note">Hover over or focus the dashed markers labelled 2012, 2017 and 2020 to read what they mean. Counts, not rates. Source: BITRE/AIHW.</p></section>
 
@@ -48,6 +48,38 @@
     <div id="chart-q5"></div>
     <p class="legend"><span class="sw sw-main"></span> Half-year share <span class="sw sw-light"></span> Jul-Dec 2014 (some values suppressed, so slightly understated)</p>
     <p class="note">Shares describe how many hospitalisations involved First Nations people. They are not risk rates, because population size is not taken into account.</p></section>
+
+  <section id="q6"><h2>Which road users are growing fastest?</h2>
+    <p class="explain"><strong>How to read this chart:</strong> every line starts at 100 in 2011, so you compare <em>growth</em> and not size. A line at 150 means 50% more hospitalisations than in 2011.</p>
+    <div id="chart-q6a"></div>
+    <h3>Change from 2011 to 2021, by road user</h3>
+    <div id="chart-q6b"></div>
+    <p class="note">Counts, not rates: we do not know how much each group travels, so growth does not mean higher risk. Groups with fewer than 200 cases in 2011 and "Other or unknown" are left out because small numbers swing widely.</p></section>
+
+  <section id="q7"><h2>Which age groups does each road user hit?</h2>
+    <p class="explain"><strong>How to read this chart:</strong> each row shows how one road user's hospitalisations are spread over age groups. Darker means a bigger share of that row.</p>
+    <div id="chart-q7"></div>
+    <p class="note">Each row adds to 100%, so rows are compared by age profile, not by size. Records with a missing age group are excluded.</p></section>
+
+  <section id="direction"><h2>Where should action start?</h2>
+    <p class="explain"><strong>Our reading:</strong> the data point to four places to look first. They show where the cases are, not why. Each step below needs rates and local evidence before it becomes a programme.</p>
+    <div class="panels">
+      <div><h3>1. Cyclists up, pedestrians down</h3><div id="chart-d1"></div></div>
+      <div><h3>2. Motorcyclists: share who are men aged 17-64</h3><div id="chart-d2"></div></div>
+      <div><h3>3. Average hospital stay by remoteness</h3><div id="chart-d3"></div></div>
+      <div><h3>4. First Nations share of hospitalisations</h3><div id="chart-d4"></div></div>
+    </div>
+    <div class="table-wrap"><table class="direction">
+      <caption class="sr-only">Four priorities, the figure behind each, a comparison, the direction and its caveat</caption>
+      <thead><tr><th scope="col">Priority</th><th scope="col">What the data show</th><th scope="col">Compare with</th><th scope="col">Direction</th><th scope="col">Caveat</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">1. Protect people who cycle</th><td><strong id="d-cyc"></strong><br>cyclists, fastest growth of the large groups</td><td>Pedestrians: <span id="d-ped"></span></td><td>Separated cycling routes and lower speeds where cyclists and cars share roads.</td><td>Counts, not risk per kilometre cycled.</td></tr>
+        <tr><th scope="row">2. Target men on motorcycles</th><td><strong id="d-moto"></strong> of motorcyclist cases are men aged 17 to 64</td><td>All road users: <span id="d-moto-all"></span></td><td>Aim rider training, licensing and enforcement at this group.</td><td>Shows who is hurt, not who rides most.</td></tr>
+        <tr><th scope="row">3. Look at care outside cities</th><td><strong id="d-bed"></strong> average stay in Regional areas</td><td id="d-bed-cmp"></td><td>Check access to trauma care and rehabilitation in regional areas.</td><td>A longer stay may mean more severe injuries or longer transfers; the data cannot say which.</td></tr>
+        <tr><th scope="row">4. Work with First Nations communities</th><td><strong id="d-fn"></strong> share of hospitalisations</td><td>Peak: <span id="d-fn-peak"></span></td><td>Co-design prevention with communities and measure it as a rate per population.</td><td>A share, not a rate; Jul-Dec 2014 is slightly understated.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note"><strong>What the data cannot tell us:</strong> causes, risk per kilometre travelled, or rates per population. A real programme would add population and travel data. The data contain breaks (Victoria 2012, NSW 2017) and a 2020 dip.</p></section>
 
   <section id="about"><h2>About the data</h2>
     <p>Source: Road Safety Data Hub (BITRE) with AIHW National Hospital Morbidity Database data, 2011-2021 (National, State and territory, First Nations files). Educational use with attribution.</p>
